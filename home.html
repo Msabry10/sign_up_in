@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sign Up</title>
+</head>
+<body>
+    <!-- Headings -->
+    <h1>Sign-Up Page</h1>
+    <!--form-->
+    <form>
+        <label for="first_name">First Name : </label>
+        <input type="text" id="first_name" placeholder="Enter Your First Name">
+        <br><br>
+        <label for="last_name">Last Name : </label>
+        <input type="text" id="last_name" placeholder="Enter Your Last Name">
+        <br><br>
+        <label for="gender">Gender : </label>
+        <select id="gender">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+        </select>
+        <br><br>
+        <label for="birthday">Birthday : </label>
+        <input type="date" id="birthday">
+        <br><br>
+        <label>Email : </label>
+        <input type="email" id="email" placeholder="**@mail.com">
+        <br><br>
+        <label for="password">Password : </label>
+        <input type="password" id="password" placeholder="Enter Your Password">
+        <br><br>
+        <label for="rpassword">Repeat_Password : </label>
+        <input type="password" id="rpassword" placeholder="Enter Your Password Again">
+        <br><br>
+        <button id="sign_up">Sign Up</button>
+        <script>
+            var action = document.getElementById("sign_up");
+            action.onclick = () => {
+                localStorage.email = document.getElementById("email").value;
+                localStorage.password = document.getElementById("password").value;
+                localStorage.r_password = document.getElementById("rpassword").value;
+                if (localStorage.password == localStorage.r_password) {
+                    window.alert("Your email is : " + localStorage.email + "\nYour password is : " + localStorage.password + "\nYour Repeated password is : " + localStorage.r_password);
+                    window.open("/index.html");
+                }
+                else {
+                    window.alert("Error");
+                }
+            }
+        </script>
+</body>
+</html>
